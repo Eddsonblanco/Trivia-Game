@@ -1,11 +1,11 @@
 # Trivia-Game
 
-Create a timer !!!
+trying to make a noise if the time is over.
 
-Create a array with questions
 
-make it ramdon
+make bigger the input radio
 
-create a multiple choises
 
-Create a 
+
+
+
