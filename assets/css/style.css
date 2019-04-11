@@ -10,7 +10,18 @@ body{
     
 }
 
+#timer{
+
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    margin: 40px;
+    background: #1543a75d;
+    color: aliceblue;
+}
+
 .container{
+    
     width: 100%;
     max-width: 1000px;
     margin: auto;
@@ -20,6 +31,44 @@ body{
 
 h1{
     text-align: center;
+    font-size:60px;
+    margin: 20px;
+    padding: 10px;
     
+}
+
+#current-question{
+    text-align: center;
+    font-size: 50px;
+    
+    
+}
+
+#question{
+    margin: 40px;
+    
+
+}
+
+#answers{
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.container .btn {
+	width: 100%;
+    text-align: center;
+    background: #1543a75d;
+	color: #fff;
+	border:none;
+	padding: 15px 10px;
+	cursor: pointer;
+	border-radius: 0 0 6px 6px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+}
+
+.container .btn:hover {
+	background: #246eb9;
 }
 
