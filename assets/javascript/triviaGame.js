@@ -3,9 +3,29 @@ var trivia = [
         question: "Name the largest freshwater lake in the world?",
         correctAnswer: 1, // este es el index de la contestación correcta
         answers: [
-            "Nile",
+            "Lake Large",
            
             "Lake Superior",
+
+            "Lake Tahoe"
+        ]
+    },
+    {
+        question: "Name the world's largest ocean?",
+        correctAnswer: 2, // este es el index de la contestación correcta
+        answers: [
+            "indian", 
+            "Artic",
+            "Pacific"
+        ]
+    },
+    {
+        question: "What is the world's longest river??",
+        correctAnswer: 1, // este es el index de la contestación correcta
+        answers: [
+            "Nile",
+           
+            "Amazon",
 
             "Orinoco"
         ]
@@ -21,19 +41,18 @@ var trivia = [
     }
 ];
 // ------- TIMER-------
-var audio = new Audio ('lose.mp3');
+
 var counter = 0;
-var timeLeft = 59;
+var timeLeft = 10;
 var interval = setInterval(timeIt, 1000);
 
 var timer = $('#timer');
-    timer.html('0');
-
+    timer.html('Ready');
     function timeIt(){
         counter++;
         timer.html('Time left: '  +  ( timeLeft -  counter));
         if (counter == timeLeft) {
-            audio.play();
+            
             clearInterval(interval);
         
         }
@@ -44,32 +63,36 @@ var timer = $('#timer');
 // create question element and added to current-question
 var currentQuestionContainer = document.getElementById('current-question');
 var question = document.getElementById('question');
-question.innerText = trivia[0].question;
+var answers = document.getElementById('answers');
+var ramdonIndex = Math.floor((Math.random() * trivia.length));
 
-currentQuestionContainer.appendChild(question)
 
-currentQuestionContainer.appendChild(question);
+
+question.innerText = trivia[ramdonIndex].question;
+
 
 // opciones de respuesta
-trivia[0].answers.map( function(answer) {
+
+trivia[ramdonIndex].answers.forEach( function(answer, index) {
     var inputElement = document.createElement('input');
     inputElement.setAttribute('type', 'radio');
-    inputElement.setAttribute('name','index');
-    inputElement.setAttribute('value','index');
-    currentQuestionContainer.appendChild(inputElement);
-    currentQuestionContainer.appendChild(document.createTextNode(answer));
-    currentQuestionContainer.appendChild(document.createElement('br'));
-    currentQuestionContainer.appendChild(document.createElement('br'));
-})
-
-// add submit button
-var submitButton = document.createElement('button')
-submitButton.innerText = 'Submit Answer';
-submitButton.onclick = submitAnswer;
-
-
+    inputElement.setAttribute('class', 'answer');
+    inputElement.setAttribute('name', 'answer');
+    inputElement.setAttribute('value', index);
+    inputElement.onclick = submitAnswer;
+    answers.appendChild(inputElement);
+    answers.appendChild(document.createTextNode(answer));
+    answers.appendChild(document.createElement('br'));
+});
 
 function submitAnswer() {
     // aquí tienes que escribir el codigo para coger la respuesta y hacer algo con ella
-    console.log('hoals amigos')
+    console.log(trivia[0].correctAnswer === this.value);
 }
+
+
+
+// conditions if user choise es igual a answer[correctAnswer]
+// the give a point 
+// restar timer 
+// call question()

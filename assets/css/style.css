@@ -24,10 +24,11 @@ body{
     
     width: 100%;
     max-width: 1000px;
-    margin: auto;
-    margin-top: 100px;
+    margin: 50px  auto;
     background: #ffffff55;
 }
+
+
 
 h1{
     text-align: center;
@@ -50,25 +51,40 @@ h1{
 
 }
 
+
 #answers{
-    background-color: #fff;
+    padding: 20px;
+    background-color: #ffffff00;
     cursor: pointer;
+    font-size: 50px;
 }
+#form input[type="radio"] {
+	
+	width: 10%;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    padding: 15px 10px;
+    height: 30px;
+
+}
+
 
 .container .btn {
 	width: 100%;
     text-align: center;
     background: #1543a75d;
-	color: #fff;
+	color: rgb(0, 0, 0);
 	border:none;
-	padding: 15px 10px;
+	padding: 30px 10px;
 	cursor: pointer;
 	border-radius: 0 0 6px 6px;
-	font-family: 'Slabo 27px', serif;
-	font-size: 18px;
+	font-family:serif;
+	font-size: 50px;
 }
 
 .container .btn:hover {
-	background: #246eb9;
+    background: #246eb9;
+    color: #fff;
+    
 }
 
